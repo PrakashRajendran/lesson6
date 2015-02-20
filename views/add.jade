@@ -1,0 +1,18 @@
+extends layout
+
+block content
+	h2 Add a New Product
+	form(method='post',action='/products/add')
+		div
+			label Title
+			input(name='title', required, placeholder='title')
+		div	
+			label Description
+			textarea(name='description', required, placeholder='description')
+		div
+			label Price
+			input(name='Price', required, placeholder='price', type='number')
+		input(type='submit', value='Add Product')
+				
+	
+	
