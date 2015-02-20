@@ -27,8 +27,8 @@ app.use('/users', users);
 
 // db
 var mongoose = require('mongoose');
-//mongoose.connect('mongodb://prprakash:laksmi2007@ds045531.mongolab.com:45531/georgiancollege');
-mongoose.connect('mongodb://localhost/lesson6');
+mongoose.connect('mongodb://prprakash:laksmi2007@ds045531.mongolab.com:45531/georgiancollege');
+//mongoose.connect('mongodb://localhost/lesson6');
 
 //tell the application which route / controller to use for product requests
 var products = require('./routes/products');
