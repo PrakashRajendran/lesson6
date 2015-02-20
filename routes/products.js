@@ -31,6 +31,19 @@ router.get('/products/add', function(req, res, next) {
 		res.render('add');
 });
 
+// API GET products request handler
+router.get('/api/products', function(req, res, next) {
+	Product.find(function (err, products) {
+		// if we have an err
+		if (err) {
+			res.end(err);
+		}
+		else {
+			res.send(products);
+		}
+	});
+});
+
 // POST /products/add - get data from the input form
 router.post('/products/add', function(req, res, next) {
 	// use the Product model to insert a new product
