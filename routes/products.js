@@ -25,6 +25,30 @@ router.get('/products', function(req, res, next) {
 	});
 });
 
+// GET /products/add - show input form
+router.get('/products/add', function(req, res, next) {
+	
+		res.render('add');
+});
+
+// POST /products/add - get data from the input form
+router.post('/products/add', function(req, res, next) {
+	// use the Product model to insert a new product
+	Product.create({
+		title: req.body.title,
+		description : req.body.description,
+		price : req.body.price
+	}, function(err, Product) {
+		if (err) {
+			console.log(err);
+			res.render('error', { error: err });
+		}
+		else {
+			console.log('Product saved' + Product);
+			res.render('added', { product: Product.title });
+		}
+	});
+});
 
 // make controller public
 module.exports = router;

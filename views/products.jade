@@ -1,6 +1,7 @@
 extends layout
 
 block content
+	a(href='/products/add', title='Add New Product') Add New Product
 	h2 Product List
 	table
 		thead
@@ -10,7 +11,7 @@ block content
 		tbody
 			each product, i in products
 				tr
-					td #(product.title)
-					td #(product.description)
-					td #(product.price)
+					td #{product.title}
+					td #{product.description}
+					td #{product.price}
 					

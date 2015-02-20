@@ -1,17 +1,18 @@
 extends layout
 
 block content
+	a(href='/products', title='List Products') List Products
 	h2 Add a New Product
 	form(method='post',action='/products/add')
 		div
 			label Title
 			input(name='title', required, placeholder='title')
-		div	
+		div
 			label Description
 			textarea(name='description', required, placeholder='description')
 		div
 			label Price
-			input(name='Price', required, placeholder='price', type='number')
+			input(name='price', required, placeholder='price', type='number')
 		input(type='submit', value='Add Product')
 				
 	
