@@ -1,0 +1,16 @@
+extends layout
+
+block content
+	h2 Product List
+	table
+		thead
+			th Title
+			th Description
+			th Price
+		tbody
+			each product, i in products
+				tr
+					td #(product.title)
+					td #(product.description)
+					td #(product.price)
+					
